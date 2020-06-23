@@ -1,0 +1,16 @@
+const fs = require('fs');
+const { MessageEmbed } = require('discord.js');
+let xp = require("../xp.json");
+
+module.exports = {
+	name: 'classement',
+	description: 'Affiche un classement des niveaux.',
+	execute(client, message, args){
+		const sortedKeysByLevel = Object.keys(xp).sort((key1, key2) => xp[key1]['level'] + xp[key2]['level']);
+		console.log(sortedKeysByLevel.length);
+
+		let a = 0;
+		sortedKeysByLevel.forEach(element => a++);
+		console.log(a);
+	}
+}
